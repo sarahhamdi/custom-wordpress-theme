@@ -1,6 +1,11 @@
 <footer>
   <div class="container">
     <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <?php dynamic_sidebar('custom-widget-area'); ?>
+    <?php wp_nav_menu( array(
+      'container' => false,
+      'theme_location' => 'footer_menu'
+    )); ?>
   </div>
 </footer>
 

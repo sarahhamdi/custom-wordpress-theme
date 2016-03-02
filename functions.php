@@ -22,7 +22,8 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'footer_menu' => 'Footer Menu'
 	) );
 
 	/*
@@ -126,7 +127,7 @@ add_filter( 'wp_page_menu_args', 'hackeryou_page_menu_args' );
  * Sets the post excerpt length to 40 characters.
  */
 function hackeryou_excerpt_length( $length ) {
-	return 40;
+	return 30;
 }
 add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
 
@@ -166,14 +167,26 @@ add_filter( 'get_the_excerpt', 'hackeryou_custom_excerpt_more' );
 function hackeryou_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => 'Primary Widget Area',
-		'id' => 'primary-widget-area',
+		'name' => 'Primary Widget Area', /* name of the widget in wordpress */
+		'id' => 'primary-widget-area', /* id refers to what is called in the template php file */
 		'description' => 'The primary widget area',
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	$secondWidgetArea = array(
+		'name' => 'Custom Widget Area',
+		'id' => 'custom-widget-area',
+		'description' => 'A custom widget area',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget' => '<div>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h3>',
+	);
+
+	register_sidebar($secondWidgetArea);
 
 }
 
@@ -275,4 +288,12 @@ function get_post_parent($post) {
 	else {
 		return $post->ID;
 	}
+}
+
+/* hackeryou_get_thumbnail_url - Returns current post feature image/thumbnail image URL so we can call add it to content without Wordpress injecting width and height */
+
+function hackeryou_get_thumbnail_url( $post ) {
+	$imageID = get_post_thumbnail_id($post->ID);
+	$imageURL = wp_get_attachment_url($imageID);
+	return $imageURL;
 }
