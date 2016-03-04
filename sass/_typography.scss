@@ -1,8 +1,8 @@
 a {
-	color: #BA209B;
+	color: $pink;
 	text-decoration: none;
 	&:hover {
-		color: #D424B1;
+		color: $pink;
 	}
 }
 
@@ -12,6 +12,12 @@ p {
 	line-height: 1.5;
 }
 
+h1,
+h2 {
+	font-family: $font-family--header;
+	margin: 0;
+	padding: 0;
+}
 /*blockquotes*/
 
 blockquote {

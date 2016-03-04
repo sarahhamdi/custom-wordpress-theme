@@ -1,21 +1,38 @@
-<?php
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-/*
-	Template Name: Full Page, No Sidebar
-*/
 
-get_header();  ?>
+<div class="header" style="background-image: url(<?php echo hackeryou_get_thumbnail_url($post) ?>)">>
+	<?php
 
-<div class="main">
-  <div class="container">
-    <?php // Start the loop ?>
-    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	/*
+		Template Name: Full Page, No Sidebar
+	*/
 
-      <h2><?php the_title(); ?></h2>
-      <?php the_content(); ?>
+	get_header();  ?>
+	<h1 class="entry-title"><?php the_title(); ?></h1>
+	<?php wp_nav_menu(array(
+	    'theme_location' => 'social'
+	)) ?>
 
-    <?php endwhile; // end the loop?>
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
+</div>
+
+
+
+<main>
+	<?php the_content(); ?>
+
+	<div class="edit-content">
+		<p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+	</div>
+	
+	<aside class="comments">
+		<?php comments_template( '', true ); ?>
+	</aside>
+
+</main>
+
+
 
 <?php get_footer(); ?>
+
+<?php endwhile; // end of the loop. ?>

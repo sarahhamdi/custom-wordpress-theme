@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Muli:400,300,300italic,400italic);
+
+$font-family--header	: "Montserrat", sans-serif;
+$font-family--body	: "Muli", sans-serif;
+
+// Font Weights
+$font-weight--light 	: 300;
+$font-weight--medium 	: 400;
+$font-weight--bold 		: 700;
+
+// Base Colours
+
+$blue			: rgba(64, 71, 89, 1);
+$pink			: rgba(252, 144, 156, 1);
+$black			: rgba(1, 1, 1, 1);
+$white			: rgba(253, 253, 253, 1);
+$gradient		: linear-gradient(-180deg, #CDFFFE 0%, #000F36 100%);
+
+
+// Mixins
+
+$box-shadow 	: -7px 7px 25px -12px $blue;
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+@mixin font-properties ($family, $weight, $align) {
+	font-family: $family;
+	font-weight: $weight;
+	text-align: $align;
+}
+
+@mixin padding-margin ($padding, $margin) {
+	padding: $padding;
+	margin: $margin;
+}
+
+@mixin colors ($background, $color) {
+	background: $background;
+	color: $color;
+}
+
+@mixin flex ($flexflow, $justify-content, $align-content) {
+	flex-flow: $flexflow;
+	justify-content: $justify-content;
+	align-content: $align-content
+}
+
+

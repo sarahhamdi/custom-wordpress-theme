@@ -1,0 +1,33 @@
+div.wrapper {
+	background: url('images/background.png');
+	background-position: 10% 50%; /* image centered on screen */
+	background-size: cover;
+    height: 100vh;
+}
+
+main {
+
+    div.content--front-page {
+		text-align: center;
+		margin: 0 auto;
+    }
+	
+	h1 {
+		@include fontSize(72);
+		margin-top: 15%;
+		color: $black;
+		text-transform: uppercase;
+	}
+    h2 {
+		font-family: $font-family--body; 
+		font-weight: $font-weight--light;
+		@include fontSize(24);
+		color: $white;
+    }
+}
+
+div.container {
+
+}
+
+

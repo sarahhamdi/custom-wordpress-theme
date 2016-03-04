@@ -23,7 +23,9 @@ function theme_setup() {
   * adding additional menus to the array. */
 	register_nav_menus( array(
 		'primary' => 'Primary Navigation',
-		'footer_menu' => 'Footer Menu'
+		'footer_menu' => 'Footer Menu',
+		'home_icon' => 'Home Icon',
+		'social' => 'Social Icons'
 	) );
 
 	/*
@@ -170,7 +172,7 @@ function hackeryou_widgets_init() {
 		'name' => 'Primary Widget Area', /* name of the widget in wordpress */
 		'id' => 'primary-widget-area', /* id refers to what is called in the template php file */
 		'description' => 'The primary widget area',
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'before_widget' => '<li class="widget-container">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
@@ -207,7 +209,7 @@ if ( ! function_exists( 'hackeryou_posted_on' ) ) :
  * Prints HTML with meta information for the current post—date/time and author.
  */
 function hackeryou_posted_on() {
-	printf('<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s',
+	printf('<p> %2$s </p><p> %3$s </p>',
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
 			get_permalink(),

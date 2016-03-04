@@ -8,6 +8,8 @@
 */
 
 @import 'normalize';
+@import 'branding';
+@import 'front-page';
 @import 'typography';
 @import 'navigation';
 @import 'sidebar';
@@ -18,7 +20,10 @@
 Default Styling
 ====================================
 */
-
+html {
+	margin: 0;
+	padding: 0;
+}
 img {
 	max-width: 100%;
 }
