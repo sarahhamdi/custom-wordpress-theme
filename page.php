@@ -1,5 +1,16 @@
 <?php get_header();  ?>
 
+<header>
+  
+  <?php 
+
+    include 'header-nav.php';
+    include 'header-sub.php';
+
+   ?>
+
+</header>
+
 <div class="main">
   <div class="container">
 
@@ -22,5 +33,5 @@
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->
-
+<?php include 'footer-credits.php'; ?>
 <?php get_footer(); ?>

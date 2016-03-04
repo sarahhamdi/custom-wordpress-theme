@@ -1,5 +1,14 @@
 <?php get_header(); ?>
+
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+<header>
+    <?php 
+
+        include 'header-nav.php';
+
+    ?>
+</header>
 
 <div class="left">
 
@@ -20,5 +29,5 @@
 </div>
 
 <?php endwhile; // end of the loop. ?>
-
+<?php include 'footer-credits.php'; ?>
 <?php get_footer(); ?>

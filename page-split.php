@@ -1,12 +1,20 @@
+<?php get_header(); ?>
+
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
 <?php
 
 /*
-	Template Name: Half Page, No Sidebar
+	Template Name: Split Page, No Sidebar
 */
 
-get_header();  ?>
+?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+<header>
+	<?php 
+		include 'header-nav.php';
+	 ?>
+</header>
 
 <div class="left">
 
@@ -24,6 +32,6 @@ get_header();  ?>
 </div>
 
 <?php endwhile; // end of the loop. ?>
-
+<?php include 'footer-credits.php'; ?>
 <?php get_footer(); ?>
 

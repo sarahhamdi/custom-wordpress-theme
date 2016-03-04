@@ -1,4 +1,4 @@
-<?php get_header();  ?>
+<?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -7,11 +7,13 @@
 	<?php
 
 	/*
-		Template Name: Full Page, No Sidebar
+		Template Name: Full Page, With Sidebar
 	*/
+
 		include 'header-nav.php';
 		include 'header-sub.php';
-	?>		
+		
+	  ?>
 </header>
 
 
@@ -29,8 +31,11 @@
 
 </main>
 
+<aside>
+	<?php get_sidebar(); ?>
+</aside>
 
-<?php include 'footer-credits.php'; ?>
+
 <?php get_footer(); ?>
 
 <?php endwhile; // end of the loop. ?>

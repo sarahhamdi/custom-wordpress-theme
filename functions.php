@@ -137,7 +137,7 @@ add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function hackeryou_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">Continue reading <span class="meta-nav">&rarr;</span></a>';
+	return ' <a href="'. get_permalink() . '">Read More <span class="meta-nav">&rarr;</span></a>';
 }
 
 /**
@@ -298,4 +298,20 @@ function hackeryou_get_thumbnail_url( $post ) {
 	$imageID = get_post_thumbnail_id($post->ID);
 	$imageURL = wp_get_attachment_url($imageID);
 	return $imageURL;
+}
+ 
+function breadcrumbs($post) {
+	$homeURL = home_url();
+	$homeTitle = "Home";
+	$parentURL = get_permalink(get_post_parent($post));
+	$parentTitle = get_the_title(get_post_parent($post));
+	$postTitle = get_the_title();
+	$postURL = get_page_link($post);
+
+
+	if ($post->post_parent) {
+		return "<a href='$postURL'>$postTitle</a> / <a href='$parentURL'>$parentTitle</a> / <a href='$homeURL'>$homeTitle</a>";		
+	} else {
+		return "<a href='$postURL'>$postTitle</a> / <a href='$homeURL'>$homeTitle</a>";	
+	}
 }

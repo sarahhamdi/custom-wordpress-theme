@@ -1,22 +1,35 @@
+<?php get_header(); ?>
+
 <?php //index.php is the last resort template, if no other templates match ?>
 
-<div class="header" style="background-image: url(<?php echo hackeryou_get_thumbnail_url($single_post) ?>)">>
+<!-- gets the header image for this index.php page specifically, because index.php does not act the same as the other pages. is used below to generate dynamic bg image in div.header -->
+<?php 
+$imageID = get_post_thumbnail_id(17);
+$imageURL = wp_get_attachment_url($imageID);
+ ?>
 
-	<?php get_header(); ?>
-	<h1 class="entry-title"><?php echo single_post_title(); ?></h1>
+<!-- HEADER -->
+<header style="background: url(<?php echo $imageURL ?>) fixed; background-position: center; background-size: cover">
+	
+	<?php 
+
+	include 'header-nav.php';
+
+	 ?>
+	
+	<h1><?php echo single_post_title(); ?></h1>
+	<!-- breadcrumbs -->
+	<h2><a href=" <?php echo get_page_link(get_option('page_for_posts')) ?> "><?php echo single_post_title(); ?></a> / 
+	<a href=" <?php echo home_url(); ?> ">Home</a></h2>
+
 	<?php wp_nav_menu(array(
 	    'theme_location' => 'social'
 	)) ?>
+</header>
 
-</div>
-
-
-		
+<!-- MAIN CONTENT -->
 <main>
-
-
-			<?php get_template_part( 'loop-copy', 'index' );	?>
-
+	<?php get_template_part( 'loop-copy', 'index' ); ?>  
 </main>
 
 <?php get_footer(); ?>
