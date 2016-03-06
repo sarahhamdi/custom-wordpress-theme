@@ -18,13 +18,18 @@ $imageURL = wp_get_attachment_url($imageID);
 	 ?>
 	
 	<h1><?php echo single_post_title(); ?></h1>
-	<!-- breadcrumbs -->
-	<h2><a href=" <?php echo get_page_link(get_option('page_for_posts')) ?> "><?php echo single_post_title(); ?></a> / 
-	<a href=" <?php echo home_url(); ?> ">Home</a></h2>
+	<div class="header-sub-wrapper">
 
+	<!-- social -->
 	<?php wp_nav_menu(array(
 	    'theme_location' => 'social'
 	)) ?>
+
+	<!-- breadcrumbs -->
+	<p><a href=" <?php echo get_page_link(get_option('page_for_posts')) ?> "><?php echo single_post_title(); ?></a> / 
+	<a href=" <?php echo home_url(); ?> ">Home</a></p>
+	
+	</div>
 </header>
 
 <!-- MAIN CONTENT -->

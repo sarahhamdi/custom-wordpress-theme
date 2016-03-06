@@ -1,13 +1,13 @@
+<?php get_header(); ?>
+
 <?php //index.php is the last resort template, if no other templates match ?>
 
 <div class="wrapper">
 
-
-
 <header>
-	
-	<?php get_header(); ?>
-
+	<?php 
+		include 'header-nav.php';
+	 ?>
 </header>
 
 <main>

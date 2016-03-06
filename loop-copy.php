@@ -20,18 +20,19 @@
 		<!-- <pre> -->
 			<img src="<?php echo hackeryou_get_thumbnail_url( $post ) ?>" alt="">
 		<!-- </pre> -->
+
 		<h2>
 			<a href="<?php the_permalink() ?>">
 				<?php the_title(); ?>
 			</a>
 		</h2>
+		<h3> By <a href="<?php the_author_link() ?>">
+				<?php the_author(); ?> </a> | <?php the_date('M. d, Y'); ?>
+		</h3>
 		<?php the_excerpt(); ?>
-		<h4>Posted on <?php the_date('M. d, Y'); ?></h4>
-		<h4>Posted by 
-			<a href="<?php the_author_link() ?>">
-				<?php the_author(); ?>
-			</a>
-		</h4>
+		
+			
+		
 	</article>
 
 <?php endwhile; // End the loop. Whew. ?>

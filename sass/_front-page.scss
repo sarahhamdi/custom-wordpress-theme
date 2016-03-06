@@ -1,33 +1,35 @@
-div.wrapper {
-	background: url('images/background.png');
-	background-position: 10% 50%; /* image centered on screen */
-	background-size: cover;
-    height: 100vh;
-}
-
-main {
-
-    div.content--front-page {
-		text-align: center;
-		margin: 0 auto;
-    }
-	
-	h1 {
-		@include fontSize(72);
-		margin-top: 15%;
-		color: $black;
-		text-transform: uppercase;
+body.home {
+	div.wrapper {
+		background: url('images/background.png');
+		background-position: 10% 50%; /* image centered on screen */
+		background-size: cover;
+	    height: 100vh;
 	}
-    h2 {
-		font-family: $font-family--body; 
-		font-weight: $font-weight--light;
-		@include fontSize(24);
-		color: $white;
-    }
+
+	main {
+		column-count: 1;
+	    div.content--front-page {
+			text-align: center;
+			margin: 0 auto;
+	    }
+		
+		h1 {
+			@include fontSize(72);
+			margin-top: 10%;
+			color: $black;
+			text-transform: uppercase;
+			font-weight: $font-weight--bold;
+			font-family: $font-family--header;
+		}
+	    h2 {
+			font-family: $font-family--body; 
+			font-weight: $font-weight--light;
+			@include fontSize(24);
+			color: $white;
+	    }
+	}
+
 }
 
-div.container {
-
-}
 
 

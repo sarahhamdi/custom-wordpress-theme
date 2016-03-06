@@ -1,18 +1,79 @@
-ul.menu {
-	margin: 0;
-	padding: 0;
-	dis
+header {
+	h1 {
+		@include padding-margin (0, 30px 0 50px 0);
+		@include fontSize(26)
+		
+	}
+	h1.entry-title {
+		color: $white;
+		font-weight: $font-weight--light;
+		}
+	font-family: $font-family--body;
+}
+
+
+div.header-menu-primary {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	color: $white;
+	@include padding-margin (10px, 0)
+}
+
+div.logo,
+div.nav ul {
+	display: inline-block;
+	color: $white;
+
+}
+
+
+div.nav ul {
+	list-style: none;
+	@include padding-margin (0, 0);
+	color: $white;
 	li {
-		display: inline;
-		margin-right: 10px;
+		display: inline-block;
+		margin-left: 10px;
+
 		a {
 			// color: #333;
 			// padding: 10px;
-			// background: #333;
-			// color: white;
+			// // background: #333;
+			color: $white;
 		}
-		&:first-of-type {
-			align-item: flex-start;
+	}
+}
+
+div.menu-social-networks-container,
+div.header-sub-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	color: $white;
+	ul.menu {
+		list-style: none;
+		@include padding-margin (0, 0);
+		li {
+			display: inline-block;
 		}
+	}
+	p,
+	div.breadcrumbs {
+		@include padding-margin (0, 0)
+		font-size: 12px;
+	}
+}
+
+header {
+	@include padding-margin (0 0 10px 0 , 0)
+}
+
+div.header-sub-wrapper {
+	@include padding-margin (10px, 0)
+	max-width: 1080px;
+	@include padding-margin (0, 0 auto)
+	a {
+		color: $white;
 	}
 }

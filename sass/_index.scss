@@ -1,0 +1,32 @@
+body.blog {
+	h1 {
+		text-align: center;
+		color: $white;
+		font-weight: 300;
+	}
+	main {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		// align-items: center;
+	}
+	article {
+		// display: flex;
+		width: 30%;
+		@include padding-margin (0, 0 0 30px 0);
+		img {
+			width: 100%;
+		}
+		h2 {
+			@include fontSize(12)
+			text-transform: none;
+		}
+		h3 {
+			@include fontSize(9)
+
+		}
+	}
+}
+
+
+

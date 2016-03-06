@@ -9,10 +9,13 @@
 
 @import 'normalize';
 @import 'branding';
-@import 'front-page';
 @import 'typography';
+
+@import 'index';
+@import 'forms';
 @import 'navigation';
 @import 'sidebar';
+@import 'front-page';
 @import 'comments';
 @import 'footer';
 /*
@@ -30,6 +33,29 @@ img {
 
 body {
 	color: #333;
+}
+main {
+	max-width: 1080px;
+	margin: 60px auto;
+	column-count: 2;
+ 	column-gap: 60px; 
+}
+
+main.with-sidebar {
+	column-count: 1;
+	width: 65%;
+	margin: 0;
+}
+
+
+
+.container-template-sidebar {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	max-width: 1080px;
+	margin: 60px auto;
+
 }
 
 .container {

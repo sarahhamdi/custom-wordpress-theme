@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header();  ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -9,31 +9,33 @@
 	/*
 		Template Name: Full Page, With Sidebar
 	*/
-
 		include 'header-nav.php';
 		include 'header-sub.php';
-		
-	  ?>
+	?>		
 </header>
 
 
+<div class="container-template-sidebar">
+	<main class="with-sidebar">
+		<?php the_content(); ?>
 
-<main>
-	<?php the_content(); ?>
+		<div class="edit-content">
+			<p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+		</div>
+		
+		<aside class="comments">
+			<?php comments_template( '', true ); ?>
+		</aside>
 
-	<div class="edit-content">
-		<p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-	</div>
-	
-	<aside class="comments">
-		<?php comments_template( '', true ); ?>
-	</aside>
+	</main>
 
-</main>
 
-<aside>
-	<?php get_sidebar(); ?>
-</aside>
+		<?php get_sidebar(); ?>
+
+
+</div>
+
+
 
 
 <?php get_footer(); ?>

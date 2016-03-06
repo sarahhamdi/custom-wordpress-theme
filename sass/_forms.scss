@@ -1,0 +1,13 @@
+form#searchform {
+	input[type=search] {
+		border: 1px solid $blue;
+		opacity: .3;
+		padding: 2px;
+	}
+	input[type=submit] {
+		border: none;
+		background: $blue;
+		color: $white;
+		opacity: .7;
+	}
+}
