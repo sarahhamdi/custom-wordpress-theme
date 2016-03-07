@@ -1,6 +1,6 @@
 header {
 	h1 {
-		@include padding-margin (0, 30px 0 50px 0);
+		@include padding-margin (0, 50px 0 50px 0);
 		@include fontSize(26)
 		
 	}
@@ -17,8 +17,37 @@ div.header-menu-primary {
 	flex-flow: row wrap;
 	justify-content: space-between;
 	color: $white;
-	@include padding-margin (10px, 0)
+	@include padding-margin (10px, 0);
 }
+
+div.nav {
+	// background: $blue;
+	@include padding-margin (10px, 0);
+	display: none;
+	text-transform: uppercase;
+	a {
+		// border-left: 1px dotted $white;
+		// padding-left: 10px;
+		background: $black;
+		padding: 5px 10px;
+	}
+	img {
+		width: 25px;
+		height: 25px;
+		float: right;
+		margin-left: 20px;
+		cursor: pointer;
+	}
+}
+
+div.hamburger {
+	padding-top: 10px;
+	img {
+		width: 40px;
+		cursor: pointer;
+	}
+}
+
 
 div.logo,
 div.nav ul {
@@ -26,7 +55,6 @@ div.nav ul {
 	color: $white;
 
 }
-
 
 div.nav ul {
 	list-style: none;
@@ -62,8 +90,22 @@ div.header-sub-wrapper {
 	div.breadcrumbs {
 		@include padding-margin (0, 0)
 		font-size: 12px;
+		a {
+			background: $black;
+			padding: 5px 10px;
+		}
 	}
 }
+
+div.breadcrumbs {
+		@include padding-margin (0, 0)
+		font-size: 12px;
+		a {
+			color: $white;
+			background: $black;
+			padding: 5px 10px;
+		}
+	}
 
 header {
 	@include padding-margin (0 0 10px 0 , 0)
@@ -73,7 +115,14 @@ div.header-sub-wrapper {
 	@include padding-margin (10px, 0)
 	max-width: 1080px;
 	@include padding-margin (0, 0 auto)
+	align-items: center;
 	a {
 		color: $white;
+
 	}
 }
+
+ul.menu-main-menu {
+	display: none;
+}
+

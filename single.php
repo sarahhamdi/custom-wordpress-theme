@@ -4,30 +4,32 @@
 
 <header>
     <?php 
-
         include 'header-nav.php';
-
-    ?>
+     ?>
 </header>
 
-<div class="left">
+<div class="container">
+    <div class="left" style="background: url(<?php echo hackeryou_get_thumbnail_url($post) ?> ) fixed; background-position: center; background-size: cover">
+        
+        <?php hackeryou_posted_on(); ?>
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+        <?php wp_nav_menu(array(
+            'theme_location' => 'social'
+          )) ?>
 
-    <?php hackeryou_posted_on(); ?>
-    <h1 class="entry-title"><?php the_title(); ?></h1>
-    <?php wp_nav_menu(array(
-        'theme_location' => 'social'
-      )) ?>
+    </div>
 
-</div>
+    <div class="right">
 
-<div class="right">
-    <?php the_content(); ?>
-    <?php previous_post_link('%link', '&larr; %title'); ?>
-    <?php next_post_link('&rarr;'); ?>
-    <p><?php edit_post_link( 'Edit This Post', '<span class="edit-link">', '</span>' ); ?></p>
-    <?php comments_template( '', true ); ?>
+        <?php the_content(); ?>
+        <p><?php edit_post_link( 'Edit This Post', '<span class="edit-link">', '</span>' ); ?></p>
+        
+        <?php comments_template( '', true ); ?>
+        <?php include 'footer-credits.php'; ?>
+    </div>
+
 </div>
 
 <?php endwhile; // end of the loop. ?>
-<?php include 'footer-credits.php'; ?>
+
 <?php get_footer(); ?>

@@ -1,0 +1,57 @@
+body.page-template-page-split,
+body.single {
+	padding: 0;
+	header {
+		position: absolute;
+		width: 100%;
+
+
+	}
+	div.container {
+		max-width: 100%;
+		padding: 0;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		
+		div.right {
+			width: 65%;
+			@include padding-margin (150px 100px 0 25px, 0);
+		}
+
+		div.left {
+			width: 35%;
+			@include padding-margin (150px 25px 0 0, 0);
+			
+			div.menu-social-networks-container {
+				justify-content: flex-end;
+			}
+
+			p {
+				text-align: right;
+				@include fontSize(8)
+				span.author {
+					text-transform: uppercase;
+
+				}
+				a {
+					color: $white;
+				}
+			}
+
+		}
+	}
+	h1.entry-title {
+		color: $white;
+		font-weight: $font-weight--light;
+		@include padding-margin (0, 0 0 50px 0);
+		@include fontSize(26)
+		text-align: right;
+		}
+
+	footer div.container {
+		// color: white;
+	}
+
+
+}

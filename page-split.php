@@ -16,22 +16,27 @@
 	 ?>
 </header>
 
-<div class="left">
+<div class="container">
+    <div class="left" style="background: url(<?php echo hackeryou_get_thumbnail_url($post) ?> ) fixed; background-position: center; background-size: cover">
 
-    <h1 class="entry-title"><?php the_title(); ?></h1>
-    <?php wp_nav_menu(array(
-        'theme_location' => 'social'
-      )) ?>
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+        <?php wp_nav_menu(array(
+            'theme_location' => 'social'
+          )) ?>
+        
+    </div>
+
+    <div class="right">
+        <?php the_content(); ?>
+        <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+        <?php comments_template( '', true ); ?>
+        <?php include 'footer-credits.php'; ?>
+    </div>
 
 </div>
 
-<div class="right">
-    <?php the_content(); ?>
-    <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-    <?php comments_template( '', true ); ?>
-</div>
 
 <?php endwhile; // end of the loop. ?>
-<?php include 'footer-credits.php'; ?>
+
 <?php get_footer(); ?>
 

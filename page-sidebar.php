@@ -26,6 +26,7 @@
 		<aside class="comments">
 			<?php comments_template( '', true ); ?>
 		</aside>
+		
 
 	</main>
 
@@ -37,7 +38,7 @@
 
 
 
-
+<?php include 'footer-credits.php'; ?>
 <?php get_footer(); ?>
 
 <?php endwhile; // end of the loop. ?>

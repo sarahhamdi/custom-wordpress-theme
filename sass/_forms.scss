@@ -3,11 +3,48 @@ form#searchform {
 		border: 1px solid $blue;
 		opacity: .3;
 		padding: 2px;
+		width: 70%;
 	}
 	input[type=submit] {
 		border: none;
-		background: $blue;
+		background: $black;
 		color: $white;
-		opacity: .7;
+		padding: 5px 10px;
+		width: 23%;
+		@include fontSize(8);
+		&:hover {
+			background: $blue;
+			opacity: .7;
+		}
 	}
 }
+
+form.wpcf7-form,
+form.comment-form {
+	input[type=text],
+	input[type=email],
+	textarea {
+		border: 1px solid $blue;
+		opacity: .3;
+		width: 60%;
+	}
+	input[type=submit] {
+		border: none;
+		background: $black;
+		color: $white;
+		padding: 10px 10px;
+		width: 60%;
+		@include fontSize(8);
+		&:hover {
+			background: $blue;
+			opacity: .7;
+		}
+	}
+}
+
+
+	#respond .form-submit input {
+
+		margin-top: 20px;
+		width: 60%;
+	}

@@ -1,3 +1,9 @@
 footer {
 	clear: both;
 }
+
+footer div.container {
+	max-width: 1080px;
+	margin: 60px auto;
+	@include fontSize(7)
+}

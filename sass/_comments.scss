@@ -2,6 +2,24 @@
 	padding: 0 0 18px;
 }
 
+div.comments-area {
+	h2 {
+		@include fontSize(10)
+	}
+}
+
+aside ol li:before, div.right ol li:before, main ol li:before {
+	content: '';
+	margin: 0;
+}
+
+aside ol li, div.right ol li, main ol li {
+	margin: 0;
+}
+
+aside ol, aside ul, div.right ol, div.right ul, main ol, main ul {
+	margin: 10px 10px 10px 20px;
+}
 h3 {
 	&#comments-title, &#reply-title {
 		color: #000000;
@@ -60,6 +78,11 @@ h3 {
 	}
 	.says {
 		font-style: italic;
+	}
+	img.avatar {
+		border-radius: 50%;
+		float: left;
+		margin-right: 10px;
 	}
 }
 

@@ -36,5 +36,5 @@ $imageURL = wp_get_attachment_url($imageID);
 <main>
 	<?php get_template_part( 'loop-copy', 'index' ); ?>  
 </main>
-
+<?php include 'footer-credits.php'; ?>
 <?php get_footer(); ?>
