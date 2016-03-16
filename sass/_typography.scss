@@ -24,6 +24,7 @@ div.right {
 	ul,
 	ol {
 		@include padding-margin (0, 30px);
+		position: relative;
 	}
 
 	ul li {
@@ -34,14 +35,21 @@ div.right {
 	 		content: '✕';
 	 		@include padding-margin (5px 5px 5px 5px, 5px);
 	 		color: $pink;
+	 		position: absolute;
+	 		left: -25px;
+	 		padding: 2px 5px;
+	 		margin: 0;
+
 		}
 	}
 
 	ol li  {
 		font-family: $font-family--body;
-		@include padding-margin (0, 10px 20px 10px 0);
-		list-style: none;
+		@include padding-margin (0, 10px 20px 10px 40px);
+		// list-style: none;
 		counter-increment: item;
+		line-height: 1.7;
+
 		&:before {
 			margin-right: 10px;
 			content: counter(item);
@@ -49,6 +57,7 @@ div.right {
 			width: 1.2em;
 			text-align: center;
 			display: inline-block;
+			left: -25px;
 		}
 	}
 
@@ -176,9 +185,11 @@ Global Classes / Wordpress Specific
 img {
 	&.alignleft {
 		padding-right: 20px;
+		padding-top: 20px;
 	}
 	&.alignright {
 		padding-left: 20px;
+		padding-top: 20px
 	}
 }
 

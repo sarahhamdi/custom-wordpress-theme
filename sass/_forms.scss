@@ -10,7 +10,7 @@ form#searchform {
 		background: $black;
 		color: $white;
 		padding: 5px 10px;
-		width: 23%;
+		width: 25%;
 		@include fontSize(8);
 		&:hover {
 			background: $blue;

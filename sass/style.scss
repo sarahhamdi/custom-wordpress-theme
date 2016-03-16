@@ -19,6 +19,7 @@
 @import 'pagesplit';
 @import 'comments';
 @import 'footer';
+
 /*
 ====================================
 Default Styling
@@ -49,8 +50,6 @@ main.with-sidebar {
 }
 
 
-
-
 .container-template-sidebar {
 	display: flex;
 	flex-flow: row wrap;
@@ -74,6 +73,8 @@ main.with-sidebar {
 .full {
 	width: 100%;
 }
+
+@import 'mediaqueries';
 
 
 

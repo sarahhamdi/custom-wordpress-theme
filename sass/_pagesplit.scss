@@ -17,14 +17,18 @@ body.single {
 		div.right {
 			width: 65%;
 			@include padding-margin (150px 100px 0 25px, 0);
+			position: relative;
+			z-index: -1;
 		}
 
 		div.left {
+			z-index: -1;
 			width: 35%;
 			@include padding-margin (150px 25px 0 0, 0);
 			
 			div.menu-social-networks-container {
 				justify-content: flex-end;
+
 			}
 
 			p {

@@ -3,18 +3,22 @@
 }
 
 div.comments-area {
+	
 	h2 {
 		@include fontSize(10)
+		border-top: 1px solid $blue;
+	    padding-top: 25px;
 	}
 }
 
 aside ol li:before, div.right ol li:before, main ol li:before {
-	content: '';
-	margin: 0;
+	position: absolute;
+	left: -25px;
 }
 
 aside ol li, div.right ol li, main ol li {
 	margin: 0;
+	list-style: none;
 }
 
 aside ol, aside ul, div.right ol, div.right ul, main ol, main ul {
@@ -247,4 +251,8 @@ p.form-allowed-tags, .nocomments {
 
 #respond p, #comments-list ul #respond {
 	margin: 0;
+}
+
+aside ol, aside ul, div.right ol, div.right ul, main ol, main ul {
+	margin: 0px 10px 10px 20px;
 }

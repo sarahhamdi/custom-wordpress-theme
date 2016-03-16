@@ -314,3 +314,9 @@ function breadcrumbs($post) {
 		return "<a href='$postURL'>$postTitle</a> / <a href='$homeURL'>$homeTitle</a>";	
 	}
 }
+
+add_filter('widget_tag_cloud_args','set_cloud_tag_size');
+function set_cloud_tag_size($args) {
+$args = array('smallest'    => 10, 'largest'    => 10);
+return $args;
+}

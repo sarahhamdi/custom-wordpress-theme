@@ -17,14 +17,18 @@ div.header-menu-primary {
 	flex-flow: row wrap;
 	justify-content: space-between;
 	color: $white;
-	@include padding-margin (10px, 0);
+	@include padding-margin (20px, 0);
 }
 
 div.nav {
 	// background: $blue;
-	@include padding-margin (10px, 0);
+	@include padding-margin (10px, 0 24%);
 	display: none;
 	text-transform: uppercase;
+	width: 54%;
+	// display: block; 
+	z-index: 9999; 
+	position: absolute;
 	a {
 		// border-left: 1px dotted $white;
 		// padding-left: 10px;
@@ -40,19 +44,16 @@ div.nav {
 	}
 }
 
-div.hamburger {
-	padding-top: 10px;
-	img {
-		width: 40px;
-		cursor: pointer;
-	}
-}
+
 
 
 div.logo,
 div.nav ul {
-	display: inline-block;
+	// display: inline-block;
 	color: $white;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
 
 }
 
@@ -63,7 +64,7 @@ div.nav ul {
 	li {
 		display: inline-block;
 		margin-left: 10px;
-
+		@include padding-margin (0, 20px 0 0 10px);
 		a {
 			// color: #333;
 			// padding: 10px;
@@ -126,3 +127,74 @@ ul.menu-main-menu {
 	display: none;
 }
 
+// div.hamburger {
+// 	padding-top: 10px;
+// 	img {
+// 		width: 40px;
+// 		cursor: pointer;
+// 	}
+// }
+
+div.hamburger {
+		// @include padding-margin (0, 40px 0 0 0);
+		padding: 0px 0 40px 0;
+    	margin: 0;
+    	cursor: pointer;
+    	div {
+    		  @include padding-margin (0, 0 auto);
+    		  width: 44px;
+    		  height: 4px;
+    		  background: $black;
+    		  transition: all 0.35s;
+    		  // position: relative;
+    		  // top: 48px;
+    		  // margin: 0 auto;
+
+    		/* -- top and bottom bar -- */
+
+    		&:before,
+    		&:after {
+    		  width: 44px;
+    		  height: 4px;
+    		  background: $black;
+    		  content: '';
+    		  position: absolute;
+    		  transition: all 0.30s;
+    		}
+
+    		&:before {
+    		  // top: 40px;
+    		  // transition: all 0.30s;
+    		}
+
+    		&:after {
+    		  // top: 55px;
+    		  // transition: all 0.30s;
+    		}
+    	}
+    	div.open {
+    		&:before {
+    		  top: 35px;
+    		  transition: all 0.30s;
+    		}
+
+    		&:after {
+    		  top: 50px;
+    		  transition: all 0.30s;
+    		}
+    	}
+    	div.toggle-close {
+    		background: none;
+    		&:before {
+    			top: 40px;
+			    transform: rotate(45deg);
+			    
+    		}
+
+    		&:after {
+    			top: 40px;
+    			transform: rotate(-45deg);
+    			
+    		}
+    	}
+}
